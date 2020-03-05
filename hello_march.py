@@ -8,8 +8,8 @@ import time
     - 保存文件的位置, excel_for_save
     - 筛选的月份, year_and_month
 """
-excel_for_read = "E:/Task/2020/3月/xxx.xlsx"
-excel_for_save = "E:/Task/2020/3月/yyy.xlsx"
+excel_for_read = "E:/Task/2020/3月/采购汇总20年上-03041731下载字段修改后.xlsx"
+excel_for_save = "E:/Task/2020/3月/采购汇总20年上华光汇总0305.xlsx"
 year_and_month = "2020-02"
 
 
@@ -20,7 +20,7 @@ def getDataFromSheet(df, sheet_index):
     df['时间2'] = pd.to_datetime(df['时间2'])
     df = df.set_index('时间2')
     try:
-        ret = df['2020-02']
+        ret = df[year_and_month]
     except:
         ret = None
 
